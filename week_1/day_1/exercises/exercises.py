@@ -3,7 +3,7 @@ print("Hello world\nHello world\nHello world\nHello world")
 # ------ Exercise 2
 print((99 ** 3) * 8)
 # ------ Exercise 3
-my_name = "Hiba"  # remplace par ton nom
+my_name = "Hiba"  
 
 user_name = input("Quel est ton prénom ? ")
 
