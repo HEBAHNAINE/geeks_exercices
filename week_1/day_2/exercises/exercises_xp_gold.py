@@ -30,7 +30,7 @@ else:
     print(f"Sorry, we don’t have the birthday information for {name}.")
 # ------ Exercise 3
 def fct(n):
-   x_str = str(x)
+   x_str = str(n)
    xx = int(x_str * 2)
    xxx = int(x_str * 3)
    xxxx = int(x_str * 4)
