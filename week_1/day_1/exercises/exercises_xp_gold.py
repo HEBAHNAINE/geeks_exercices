@@ -26,7 +26,7 @@ for index, value in enumerate(numbers):
         print(value)
 
 # ------ Exercise 3
-while name:=Hiba :
+while name:="Hiba" :
     print 
 my_name = "Hiba" 
 while True:
