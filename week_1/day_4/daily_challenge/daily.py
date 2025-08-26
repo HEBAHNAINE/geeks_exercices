@@ -13,7 +13,7 @@ class Pagination:
         end = start + self.page_size
         return self.items[start:end]
         def go_to_page(self, page_num):
-         ge_num < 1 or page_num > self.total_pages:
+         ge_num < 1 or page_num > self.total_pages
         raise ValueError(f"Page {page_num} hors de portée. Total pages: {self.total_pages}")
         self.current_idx = page_num - 1
 
