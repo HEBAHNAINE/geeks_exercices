@@ -2,7 +2,7 @@ import requests
 import psycopg2
 import random
 
-# ✅ Connexion à PostgreSQL (avec tes vrais paramètres)
+#Connexion à postgreSQL 
 conn = psycopg2.connect(
     dbname="new_database",
     user="postgres",
@@ -12,15 +12,15 @@ conn = psycopg2.connect(
 )
 cur = conn.cursor()
 
-# 1. Récupérer tous les pays via API
+# Récupérer tous les pays via API
 url = "https://restcountries.com/v3.1/all?fields=name,capital,flag,subregion,population"
 response = requests.get(url)
 countries = response.json()
 
-# 2. Choisir 10 pays au hasard
+# Choisir 10 pays au hasard
 random_countries = random.sample(countries, 10)
 
-# 3. Insérer dans la base
+# Insérer dans la base
 for country in random_countries:
     name = country.get("name", {}).get("common", "Unknown")
     capital = country.get("capital", ["Unknown"])[0] if country.get("capital") else "Unknown"
