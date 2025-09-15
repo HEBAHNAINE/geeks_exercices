@@ -102,6 +102,7 @@ const details = {
   console.log(sentence.trim()); 
   
 // ===== Exercise 7
+
 const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
 let initials = [];
 for (let i = 0; i < names.length; i++) {
