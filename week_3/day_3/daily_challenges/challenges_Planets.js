@@ -13,7 +13,6 @@ const planets = [
   const section = document.querySelector(".listPlanets");
   
   planets.forEach(planet => {
-    // create planet
     const planetDiv = document.createElement("div");
     planetDiv.classList.add("planet");
     planetDiv.style.backgroundColor = planet.color;
