@@ -166,7 +166,6 @@ console.log("First link text:", firstLi.textContent);
 console.log("Last link text:", lastLi.textContent);
 
 // ===== Exercise 7
-// 
 const allBooks = [
     {
       title: "Harry Potter",
