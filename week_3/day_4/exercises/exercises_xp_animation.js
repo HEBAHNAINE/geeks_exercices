@@ -37,7 +37,7 @@ setTimeout(function() {
 // ===== Exercise 2
 function myMove() {
     let elem = document.getElementById("animate");
-    let pos = 0; // البداية
+    let pos = 0; 
     let id = setInterval(frame, 1); 
     function frame() {
       if (pos >= 350) { 
