@@ -1,15 +1,16 @@
 // ====== Daily Challenge 1
-//Using one loop
-let pattern = ""
-for(let i=1;i<=6;i++){
-    pattern+="*".repeat(i)+"/n";
+// Using one loop
+let pattern = "";
+for (let i = 1; i <= 6; i++) {
+    pattern += "*".repeat(i) + "\n";
 }
-console(pattern);
-//Using two nested loops
-for(let i=1;i<=6;i++){
-    for(let j=1;j<=i;j++){
-        pattern+="*";
+console.log(pattern);
+// Using two nested loops
+pattern = "";
+for (let i = 1; i <= 6; i++) {
+    for (let j = 1; j <= i; j++) {
+        pattern += "*";
     }
-    pattern +="/n";
+    pattern += "\n";
 }
 console.log(pattern);
