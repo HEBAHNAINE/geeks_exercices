@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coloring Squares</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(20, 20px); 
+      grid-template-rows: repeat(20, 20px);    
+      gap: 1px;
+      margin: 20px auto;
+      width: max-content;
+    }
+
+    .square {
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    #colorPicker {
+      margin: 10px;
+      padding: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Select a color</h2>
+  <input type="color" id="colorPicker" value="#000000">
+  <h2>Draw what you want</h2>
+  <div id="grid"></div>
+
+  <script>
+    let grid = document.getElementById("grid");
+    let colorPicker = document.getElementById("colorPicker");
+    let currentColor = colorPicker.value;
+    let isDrawing = false;
+    // 
+    colorPicker.addEventListener("input", function() {
+      currentColor = this.value;
+    });
+    // 
+    for (let i = 0; i < 400; i++) {
+      let square = document.createElement("div");
+      square.classList.add("square");
+
+      square.addEventListener("mousedown", function() {
+        isDrawing = true;
+        square.style.backgroundColor = currentColor;
+      });
+
+      square.addEventListener("mouseover", function() {
+        if (isDrawing) {
+          square.style.backgroundColor = currentColor;
+        }
+      });
+
+      square.addEventListener("mouseup", function() {
+        isDrawing = false;
+      });
+
+      grid.appendChild(square);
+    }
+    // 
+    document.body.addEventListener("mouseup", function() {
+      isDrawing = false;
+    });
+  </script>
+</body>
+</html>
