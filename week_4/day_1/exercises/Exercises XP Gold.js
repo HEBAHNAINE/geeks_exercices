@@ -40,7 +40,7 @@ Then, when we call that function with (1), it does 30 + 1 = 31.*/
 /*The function curriedSum uses currying, which means it takes one argument at a time.
 When we call curriedSum(5), it returns a new function that adds 5 to any number.
 So when we call add5(12), it does the calculation:
-👉 5 + 12 = 17*/
+5 + 12 = 17*/
 
 
 //exercise 5
