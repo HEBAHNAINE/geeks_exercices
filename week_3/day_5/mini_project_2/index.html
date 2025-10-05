@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Drum Kit — Concert Style</title>
+
+  <style>
+    :root {
+      --glow: #f6c300;
+      --dark-bg: rgba(0,0,0,0.75);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; font-family: "Segoe UI", Roboto, Arial, sans-serif; }
+
+    body {
+      
+      background: url('OIP.webp') center/cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      padding: 40px;
+    }
+
+    /* container for keys */
+    .wrap {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    h1 {
+      margin: 0 0 10px 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-shadow: 0 6px 24px rgba(0,0,0,0.6);
+    }
+
+    .keys {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.35));
+      border-radius: 12px;
+    }
+
+    .key {
+      width: 100px;
+      height: 110px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.65);
+      border: 2px solid rgba(246,195,0,0.9);
+      border-radius: 6px;
+      box-shadow: 0 0 0 rgba(246,195,0,0);
+      cursor: pointer;
+      transition: transform .09s ease, box-shadow .12s ease, background .12s ease;
+      user-select: none;
+    }
+
+    .key kbd {
+      font-size: 36px;
+      letter-spacing: 6px;
+      display:block;
+      margin-bottom: 6px;
+    }
+
+    .key .sound {
+      font-size: 12px;
+      color: var(--glow);
+      opacity: 0.95;
+      text-transform: capitalize;
+    }
+
+    .key.playing {
+      transform: scale(1.07);
+      box-shadow: 0 8px 40px -6px rgba(246,195,0,0.95), 0 0 18px 2px rgba(246,195,0,0.25);
+      background: rgba(0,0,0,0.92);
+      border-color: var(--glow);
+    }
+
+    /* hint text */
+    .hint {
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+      margin-top: 10px;
+      background: rgba(0,0,0,0.35);
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.04);
+      backdrop-filter: blur(4px);
+    }
+
+    @media (max-width: 760px) {
+      .key { width: 84px; height: 92px; }
+      .key kbd { font-size: 28px; }
+      .keys { gap: 12px; padding: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>Live Drum Kit</h1>
+
+    <div class="keys" id="keys">
+      <div class="key" data-key="65"><kbd>A</kbd><span class="sound">Boom</span></div>
+      <div class="key" data-key="83"><kbd>S</kbd><span class="sound">Clap</span></div>
+      <div class="key" data-key="68"><kbd>D</kbd><span class="sound">HiHat</span></div>
+      <div class="key" data-key="70"><kbd>F</kbd><span class="sound">Kick</span></div>
+      <div class="key" data-key="71"><kbd>G</kbd><span class="sound">OpenHat</span></div>
+      <div class="key" data-key="72"><kbd>H</kbd><span class="sound">Ride</span></div>
+      <div class="key" data-key="74"><kbd>J</kbd><span class="sound">Snare</span></div>
+      <div class="key" data-key="75"><kbd>K</kbd><span class="sound">Tink</span></div>
+      <div class="key" data-key="76"><kbd>L</kbd><span class="sound">Tom</span></div>
+    </div>
+
+    <div class="hint">Press A S D F G H J K L or click the squares</div>
+  </div>
+
+  <audio data-key="65" src="sounds/boom.wav"></audio>
+  <audio data-key="83" src="sounds/clap.wav"></audio>
+  <audio data-key="68" src="sounds/hihat.wav"></audio>
+  <audio data-key="70" src="sounds/kick.wav"></audio>
+  <audio data-key="71" src="sounds/openhat.wav"></audio>
+  <audio data-key="72" src="sounds/ride.wav"></audio>
+  <audio data-key="74" src="sounds/snare.wav"></audio>
+  <audio data-key="75" src="sounds/tink.wav"></audio>
+  <audio data-key="76" src="sounds/tom.wav"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
