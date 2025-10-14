@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form #3 - Send Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 40px;
+    }
+    form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Send Data to Another Page</h2>
+
+  <form action="display.html" method="GET">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="lastname">Lastname:</label>
+    <input type="text" id="lastname" name="lastname" placeholder="Enter your lastname" required>
+
+    <input type="submit" value="Send">
+  </form>
+
+</body>
+</html>
+<!-- ///////////////////////// -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e7f0f7;
+      padding: 40px;
+    }
+    section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 350px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    p {
+      font-size: 18px;
+    }
+    .no-data {
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Received Data</h2>
+  <section id="result"></section>
+
+  <script>
+    
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+    const lastname = params.get("lastname");
+    const section = document.getElementById("result");
+
+    if (name && lastname) {
+      section.innerHTML = `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Lastname:</strong> ${lastname}</p>
+      `;
+    } else {
+      section.innerHTML = `<p class="no-data">No data received.</p>`;
+    }
+  </script>
+
+</body>
+</html>

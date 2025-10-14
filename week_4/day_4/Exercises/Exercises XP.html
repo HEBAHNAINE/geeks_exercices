@@ -1,0 +1,87 @@
+<!-- exercise1 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Form GET Example</title>
+ </head>
+ <body>
+   <h2>Contact Form (GET Method)</h2>
+
+   <form action="" method="GET">
+     <label for="name">Name:</label><br>
+     <input type="text" name="name" id="name"><br><br>
+
+     <label for="message">Message:</label><br>
+     <textarea name="message" id="message" rows="4" cols="30"></textarea><br><br>
+
+     <input type="submit" value="Send">
+   </form>
+ </body>
+ </html>
+<!-- //exercise2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form POST Example</title>
+</head>
+<body>
+  <h2>Contact Form (POST Method)</h2>
+
+  <form action="" method="POST">
+    <label for="name">Name:</label><br>
+    <input type="text" name="name" id="name"><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea name="message" id="message" rows="4" cols="30"></textarea><br><br>
+
+    <input type="submit" value="Send">
+  </form>
+</body>
+</html>
+<!-- //exercise3 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON Mario</title>
+</head>
+<body>
+  <script>
+    const marioGame = {
+      detail : "An amazing game!",
+      characters : {
+          mario : {
+            description:"Small and jumpy. Likes princesses.",
+            height: 10,
+            weight: 3,
+            speed: 12,
+          },
+          bowser : {
+            description: "Big and green, Hates princesses.",
+            height: 16,
+            weight: 6,
+            speed: 4,
+          },
+          princessPeach : {
+            description: "Beautiful princess.",
+            height: 12,
+            weight: 2,
+            speed: 2,
+          }
+      },
+    };
+
+    const jsonMario = JSON.stringify(marioGame);
+    console.log("Normal JSON:", jsonMario);
+
+    const jsonPretty = JSON.stringify(marioGame, null, 2);
+    console.log("Pretty JSON:", jsonPretty);
+    debugger;
+  </script>
+</body>
+</html>
+
+
+
